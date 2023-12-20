@@ -18,7 +18,7 @@ window.addEventListener('load', ()=>{
         ctx.beginPath();
     }
     function draw(e){
-        if(!painting) return;
+        if(!paint) return;
         ctx.lineWidth = 12;
         ctx.lineCap = "round";
 
