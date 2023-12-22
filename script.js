@@ -37,3 +37,8 @@ function erase(){
     let ctx = canvas.getContext('2d');
     ctx.clearRect(0,0,canvas.width, canvas.height);
 }
+function changeColorType(){
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+    ctx.strokeStyle = document.getElementById("Colors").value;
+}
