@@ -1,3 +1,8 @@
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
+let sizeSlide = document.getElementById("cursorSize");
+let brushSize = (ctx.lineWidth);
+
 window.addEventListener('load', ()=>{
     const canvas = document.querySelector("canvas");
     const ctx = canvas.getContext('2d');
@@ -19,7 +24,8 @@ window.addEventListener('load', ()=>{
     }
     function draw(e){
         if(!paint) return;
-        ctx.lineWidth = 12;
+        //ctx.lineWidth = 12;
+        brushSize;
         ctx.lineCap = "round";
 
         ctx.lineTo(e.clientX, e.clientY);
@@ -33,12 +39,28 @@ window.addEventListener('load', ()=>{
     canvas.addEventListener("mousemove", draw);
 });
 function erase(){
-    let canvas = document.getElementById('canvas');
-    let ctx = canvas.getContext('2d');
     ctx.clearRect(0,0,canvas.width, canvas.height);
 }
 function changeColorType(){
-    let canvas = document.getElementById('canvas');
-    let ctx = canvas.getContext('2d');
     ctx.strokeStyle = document.getElementById("Colors").value;
 }
+/*
+function changeShape(){
+    canvas.add(rectangleDraw(e));
+}
+const rectangleDraw = (e) => {
+    ctx.strokeRect(e.clientX, e.clientY, prevMouseX - e.clientX, prevMouseY - e.clientY);
+}
+const triangleDraw = (e) => {
+    ctx.beginPath();
+    ctx.moveTo(prevMouseX, prevMouseY);
+    ctx.lineTo(e.clientX, e.clientY);
+    ctx.lineTo(prevMouseX * 2 - e.clientX, e.clientY);
+    ctx.closePath();
+}
+const circleDraw = (e) => {
+    ctx.beginPath();
+    let radius = Math.sqrt(Math.pow(prevMouseX - e.clientX), 2) + (Math.pow(prevMouseY - e.clientY),2);
+    ctx.arc(prevMouseX, prevMouseY, radius, 0, 2 * Math.PI);
+}*/
+sizeSlide.addEventListener("change", () => brushSize = sizeSlide.value());

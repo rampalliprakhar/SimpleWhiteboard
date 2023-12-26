@@ -16,11 +16,21 @@
             <button type="button" class="btn btn-primary" onclick='erase()'>Erase</button>
             <button type="button" class="btn btn-primary" onclick='changeColorType()'>Color Type</button>
             <select id="Colors" onchange="changeColorType()">
-                <option value="black">Black</option>
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
+                <option style="Color: black" value="black">Black</option>
+                <option style="Color: red" value="red">Red</option>
+                <option style="Color: green" value="green">Green</option>
+                <option style="Color: blue" value="blue">Blue</option>
             </select>
+            <button type="button" class="btn btn-primary" onclick='changeShape()'>Shape</button>
+            <select id="shape" onchange="changeShape()">
+                <option value="rectangle">Rectangle</option>
+                <option value="triangle">Triangle</option>
+                <option value="line">Line</option>
+                <option value="circle">Circle</option>
+            </select>
+            <li class="option">
+                <input type="range" id="cursorSize">
+            </li>
         </div>
         <canvas id="canvas"></canvas>
         <script src="script.js"></script>
