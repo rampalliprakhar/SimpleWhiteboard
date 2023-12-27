@@ -41,9 +41,11 @@ window.addEventListener('load', ()=>{
 function erase(){
     ctx.clearRect(0,0,canvas.width, canvas.height);
 }
-function changeColorType(){
-    ctx.strokeStyle = document.getElementById("Colors").value;
+function changeColorType(color, colorName) {
+    ctx.strokeStyle = color;
+    document.getElementById('colorDropdownBtn').textContent = colorName;
 }
+// Have to make changeShape() functionality work better in the future//
 /*
 function changeShape(){
     canvas.add(rectangleDraw(e));
