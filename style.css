@@ -1,8 +1,23 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 canvas{
     border: 2px solid black;
+}
+.input{
+    right: 80%;
+}
+input[type="color"] {
+    width: 60px;
+    height: 42px;
+}
+.colorDropdownBtn{
+    width:auto;
+    height:auto;
+}
+.slider{
+    width:20px;
 }

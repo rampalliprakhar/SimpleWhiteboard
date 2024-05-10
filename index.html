@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>SimpleWhiteboard</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-            crossorigin="anonymous"></script>
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" href="style.css" />
-        <title>Whiteboard</title>
     </head>
-    
     <body>
         <div class="btn-group py-3">
-            <button type="button" class="btn btn-primary" onclick='erase()'>Erase</button>
-            <button type="button" class="btn btn-primary" onclick='changeColorType()'>Color Type</button>
-            <select id="Colors" onchange="changeColorType()">
-                <option style="Color: black" value="black">Black</option>
-                <option style="Color: red" value="red">Red</option>
-                <option style="Color: green" value="green">Green</option>
-                <option style="Color: blue" value="blue">Blue</option>
-            </select>
+            <div class="btn btn-secondary">
+                <label for="toolSelect">  Tool:  </label>
+                <select id="toolSelect">
+                    <option value="pen">Pen</option>
+                    <option value="line">Line</option>
+                    <option value="rectangle">Rectangle</option>
+                    <option value="triangle">Triangle</option>
+                    <option value="circle">Circle</option>
+                </select>
+            </div>
+            <input type="color" class="btn btn-secondary" id="usercolor" value="#FFFFFF">
+            <button type="button" class="btn btn-secondary" onclick='erase()'>Erase</button>
+            <button type="button" class="btn btn-secondary" onclick='changeColorType()'>Color Type</button>
             <div class="dropdown">
-                <button id="colorDropdownBtn" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Black
+                <button id="colorDropdownBtn" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false"> Black
                 </button>
                 <ul class="dropdown-menu">
-                    <li><button style="Color: black" class="dropdown-item" onclick="changeColorType('black', 'Black')">Black</button></li>
-                    <li><button style="Color: red" class="dropdown-item" onclick="changeColorType('red', 'Red')">Red</button></li>
-                    <li><button style="Color: green" class="dropdown-item" onclick="changeColorType('green', 'Green')">Green</button></li>
-                    <li><button style="Color: blue" class="dropdown-item" onclick="changeColorType('blue', 'Blue')">Blue</button></li>
+                    <li>
+                        <button style="Color: black" class="dropdown-item" onclick="changeColorType('black', 'Black')">Black</button>
+                    </li>
+                    <li>
+                        <button style="Color: white" class="dropdown-item" onclick="changeColorType('white', 'White')">White</button>
+                    </li>
+                    <li>
+                        <button style="Color: red" class="dropdown-item" onclick="changeColorType('red', 'Red')">Red</button>
+                    </li>
+                    <li>
+                        <button style="Color: green" class="dropdown-item" onclick="changeColorType('green', 'Green')">Green</button>
+                    </li>
+                    <li>
+                        <button style="Color: blue" class="dropdown-item" onclick="changeColorType('blue', 'Blue')">Blue</button>
+                    </li>
                 </ul>
             </div>
-            <button type="button" class="btn btn-primary" onclick='changeShape()'>Shape</button>
-            <select id="shape" onchange="changeShape()">
-                <option value="rectangle">Rectangle</option>
-                <option value="triangle">Triangle</option>
-                <option value="line">Line</option>
-                <option value="circle">Circle</option>
-            </select>
-            <li class="option">
-                <input type="range" id="cursorSize">
-            </li>
+            <input type="range" id="slider" value="5" min="1" max="10" oninput="sliderMax.value = slider.value">
+            <output id="sliderMax">5</output>
         </div>
         <canvas id="canvas"></canvas>
         <script src="script.js"></script>
     </body>
 </html>
+
+
