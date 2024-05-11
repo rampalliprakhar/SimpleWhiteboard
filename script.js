@@ -4,7 +4,6 @@ let ctx = canvas.getContext('2d');
 // Body
 const body = document.querySelector('body');
 // Size of the pen
-//let brushSize = ctx.lineWidth;
 var brushSize = 5;
 // Drawing tools
 let tools = 'pen';
@@ -18,7 +17,8 @@ let shapes = [];
 // Drag objects along with its value
 let draggable = false;
 let dragStartX, dragStartY;
-
+// Save an image
+const imgLink = document.createElement('a');
 // Body background change by user choice
 var bgColor = document.getElementById("usercolor");
 
@@ -26,8 +26,6 @@ bgColor.addEventListener("input", function(){
   colorChoice = bgColor.value;
   body.style.backgroundColor = colorChoice;
 }, false);
-
-
 
 window.addEventListener('load', ()=>{
     const canvas = document.querySelector("canvas");
@@ -78,3 +76,11 @@ function changeColorType(color, colorName) {
     ctx.strokeStyle = color;
     document.getElementById('colorDropdownBtn').textContent = colorName;
 }
+// Saving image
+function saveImage(){
+    const imgURL = canvas.toDataURL('image/png');
+    imgLink.href = imgURL;
+    imgLink.download = "image.png";
+    imgLink.click();
+}
+saveImage();

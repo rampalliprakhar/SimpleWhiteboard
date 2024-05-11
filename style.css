@@ -1,8 +1,8 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 canvas{
     border: 2px solid black;
@@ -11,13 +11,16 @@ canvas{
     right: 80%;
 }
 input[type="color"] {
-    width: 60px;
     height: 42px;
+    width: 60px;
 }
 .colorDropdownBtn{
-    width:auto;
     height:auto;
+    width:auto;
 }
 .slider{
     width:20px;
+}
+.working{
+    align-items: center;
 }

@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="btn-group py-3">
-            <div class="btn btn-secondary">
+        <div class="btn-group py-3" id="working">
+            <div class="btn btn-dark">
                 <label for="toolSelect">  Tool:  </label>
                 <select id="toolSelect">
                     <option value="pen">Pen</option>
@@ -23,13 +23,15 @@
                     <option value="rectangle">Rectangle</option>
                     <option value="triangle">Triangle</option>
                     <option value="circle">Circle</option>
+                    <input type="range" id="slider" value="5" min="1" max="10" oninput="sliderMax.value = slider.value">
+                    <output id="sliderMax">5</output>
                 </select>
             </div>
-            <input type="color" class="btn btn-secondary" id="usercolor" value="#FFFFFF">
-            <button type="button" class="btn btn-secondary" onclick='erase()'>Erase</button>
-            <button type="button" class="btn btn-secondary" onclick='changeColorType()'>Color Type</button>
+            <input type="color" class="btn btn-dark" id="usercolor" value="#FFFFFF">
+            <button type="button" class="btn btn-dark" onclick='erase()'>Reset</button>
+            <button type="button" class="btn btn-dark" onclick='changeColorType()'>Color Type</button>
             <div class="dropdown">
-                <button id="colorDropdownBtn" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                <button id="colorDropdownBtn" class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false"> Black
                 </button>
                 <ul class="dropdown-menu">
@@ -50,8 +52,7 @@
                     </li>
                 </ul>
             </div>
-            <input type="range" id="slider" value="5" min="1" max="10" oninput="sliderMax.value = slider.value">
-            <output id="sliderMax">5</output>
+            <button id="saveImage" onclick='saveImage()'>Save</button>
         </div>
         <canvas id="canvas"></canvas>
         <script src="script.js"></script>
