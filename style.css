@@ -1,26 +1,80 @@
 * {
     box-sizing: border-box;
-    flex-wrap: wrap;
     margin: 0;
     padding: 0;
 }
-canvas{
-    border: 2px solid black;
+
+html, body {
+    height: 100%; /* Ensure the body takes full height */
+    background-color: #f0f0f0; /* Light background for better contrast */
 }
-.input{
-    right: 80%;
+
+.container-fluid {
+    height: 100%; /* Ensure the container takes full height */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
 }
+
+h1 {
+    color: #343a40; /* Darker text for the title */
+    font-size: 1.5rem; /* Smaller font size for the title */
+}
+
+#working {
+    z-index: 1; /* Ensure the button group is above the canvas */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 5px; /* Reduced margin to minimize space */
+    padding: 5px; /* Add padding to the button group */
+}
+
+canvas {
+    border: 2px solid #343a40; /* Darker border for better visibility */
+    width: 100%; /* Make canvas responsive */
+    height: calc(100% - 100px); /* Set height to fill remaining space */
+    background-color: #ffffff; /* White background for the canvas */
+    display: block; /* Prevent inline-block spacing issues */
+    margin: 0 auto; /* Center the canvas horizontally */
+}
+
+.input-group {
+    margin-right: 5px; /* Reduced space between input group and other buttons */
+}
+
+.input-group .input-group-text {
+    font-size: 0.8rem; /* Smaller font size for labels */
+    padding: 0.25rem 0.5rem; /* Smaller padding for labels */
+}
+
 input[type="color"] {
-    height: 42px;
-    width: 60px;
+    height: 30px; /* Reduced height for color input */
+    width: 40px; /* Reduced width for color input */
 }
-.colorDropdownBtn{
-    height:auto;
-    width:auto;
+
+.btn {
+    margin: 0 3px; /* Reduced space between buttons */
+    padding: 4px 6px; /* Smaller padding for buttons */
+    font-size: 0.75rem; /* Smaller font size for buttons */
 }
-.slider{
-    width:20px;
+
+.dropdown-menu {
+    min-width: 150px; /* Set a minimum width for dropdown */
 }
-.working{
-    align-items: center;
+
+/* Additional styles for better usability */
+.form-range {
+    cursor: pointer; /* Change cursor to pointer for better UX */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Bootstrap danger color */
+}
+
+.btn-success {
+    background-color: #28a745; /* Bootstrap success color */
+}
+
+.btn-dark {
+    background-color: #343a40; /* Bootstrap dark color */
 }
